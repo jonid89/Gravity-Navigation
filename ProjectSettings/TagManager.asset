@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - NoGoZone
+  - 
+  - Asteroid Image
+  - 
+  - Ship
+  - 
+  - Explosion
+  - 
+  - Fire
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Stars
+    uniqueID: 2569036301
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: NoGoZone
+    uniqueID: 2541479847
+    locked: 0
+  - name: Asteroid Image
+    uniqueID: 1402054799
+    locked: 0
+  - name: Fire
+    uniqueID: 329962419
+    locked: 0
+  - name: Ship
+    uniqueID: 2574795409
+    locked: 0
+  - name: Explosion
+    uniqueID: 3909060039
+    locked: 0
+  - name: UI
+    uniqueID: 364971959
+    locked: 0

@@ -1,0 +1,14 @@
+
+
+
+
+Assembly 'Packages/com.google.external-dependency-manager/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.164.dll' will not be loaded due to errors:
+Unable to resolve reference 'UnityEditor.iOS.Extensions.Xcode'. Is the assembly missing or incompatible with the current platform?
+Reference validation can be disabled in the Plugin Inspector.
+
+
+
+Could not create an instance of type org.gradle.initialization.DefaultSettings_Decorated.
+> Could not initialize class org.codehaus.groovy.reflection.ReflectionCache
+
+exit code: 1
