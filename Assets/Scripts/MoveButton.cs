@@ -19,6 +19,10 @@ public class MoveButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if (buttonDown) ship.MoveSide(letter);
         if (Input.GetKey("right")) ship.MoveSide("R");
         if (Input.GetKey("left")) ship.MoveSide("L");
+        if (Input.GetKeyDown("right")) ship.TurnOnFire("R");
+        if (Input.GetKeyDown("left")) ship.TurnOnFire("L");
+        if (Input.GetKeyUp("right")) ship.TurnOffFire("R");
+        if (Input.GetKeyUp("left")) ship.TurnOffFire("L");
     }
 
     public void OnPointerDown(PointerEventData eventData)
