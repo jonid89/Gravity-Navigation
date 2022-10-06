@@ -40,6 +40,12 @@ public class GameSettings : MonoBehaviour
         audioSource.Play();
     }
 
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        audioSource.Play();
+    }
+
     public int GetLevelCount()
     {
         return levelCount;

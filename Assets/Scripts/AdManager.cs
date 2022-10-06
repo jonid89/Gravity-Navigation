@@ -50,7 +50,7 @@ public class AdManager : MonoBehaviour
     #region RewardedAd
     private void OnUserEarnedReward(object sender, Reward e)
     {
-        GameSettings.Instance.RestartGame();
+        GameSettings.Instance.RestartLevel();
     }
 
     public void CreateRewardedAd(AdRequest request)

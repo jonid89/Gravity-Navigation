@@ -25,7 +25,7 @@ public class StartPopUp : MonoBehaviour
 
     void Update()
     {
-        if (leftButton.buttonDown || rightButton.buttonDown)
+        if (leftButton.buttonDown || rightButton.buttonDown || Input.GetKey("right") || Input.GetKey("left") )
         {
             ship.speed = shipSpeed;
             ship.sideSpeed = shipSideSpeed;

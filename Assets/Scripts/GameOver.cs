@@ -20,10 +20,15 @@ public class GameOver : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    public void Restart()
+    public void RestartGame()
     {
-        if (levelCount < 3) GameSettings.Instance.RestartGame();
-        else AdManager.Instance.ShowRewardedAd();
+        GameSettings.Instance.RestartGame();
+        //AdManager.Instance.ShowRewardedAd();
+    }
+
+    public void RestartLevelWithAd()
+    {
+        AdManager.Instance.ShowRewardedAd();
     }
 
 }

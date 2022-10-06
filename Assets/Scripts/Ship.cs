@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Media;
+//using System.Media;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class Ship : MonoBehaviour
 {
-    public float speed = 7f;
-    public float sideSpeed = 5f;
+    public float speed = 4f;
+    public float sideSpeed = 2f;
     public float attractionSpeed = 0f;
-    public float rotationSpeed = 4f;
+    public float rotationSpeed = 2f;
+    public float middleAttractionSpeed = 0.25f;
+    public float innerAttractionSpeed = 0.5f;
     public Transform front;
     public GameObject attractionObj;
     public GameObject rearFire;
@@ -47,9 +49,11 @@ public class Ship : MonoBehaviour
 
     private void SetLevelVariables()
     {
-        speed += 0.4f * (levelCount - 1) + 2 / levelCount;
-        sideSpeed += 0.4f * (levelCount - 1) + 2 / levelCount;
-        rotationSpeed += 0.4f * (levelCount - 1) + 2 / levelCount;
+        speed += 0.4f * (levelCount - 1) + 1 / levelCount;
+        sideSpeed += 0.4f * (levelCount - 1) + 1 / levelCount;
+        rotationSpeed += 0.4f * (levelCount - 1) + 1 / levelCount;
+        middleAttractionSpeed = Mathf.Clamp(middleAttractionSpeed + 0.15f * (levelCount - 1), middleAttractionSpeed, 1.5f); 
+        innerAttractionSpeed = Mathf.Clamp(innerAttractionSpeed + 0.15f * (levelCount - 1), innerAttractionSpeed, 3f); 
         //Debug.Log("Speed: " + speed + "SideSpeed: " + sideSpeed);
     }
 
@@ -133,12 +137,12 @@ public class Ship : MonoBehaviour
                 break;
             case "MiddleAttraction":
                 attractionObj = collision.gameObject; 
-                attractionSpeed = 1f;
+                attractionSpeed = middleAttractionSpeed;
                 //Debug.Log("Middle In");
                 break;
             case "InnerAttraction":
                 attractionObj = collision.gameObject; 
-                attractionSpeed = 2f;
+                attractionSpeed = innerAttractionSpeed;
                 //Debug.Log("Inner In");
                 break;
             case "Obstacle(Clone)":
@@ -159,7 +163,7 @@ public class Ship : MonoBehaviour
         switch (collision.gameObject.name)
         {
             case "InnerAttraction":
-                attractionSpeed = 1f;
+                attractionSpeed = middleAttractionSpeed;
                 attractionObj = collision.transform.parent.Find("MiddleAttraction").gameObject;
                 //Debug.Log("Inner Out");
                 break;
